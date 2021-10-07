@@ -22,7 +22,8 @@
         "ext-json": "*",
         "kartik-v/yii2-date-range": "dev-master",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "kartik-v/yii2-krajee-base": "dev-master"
+        "kartik-v/yii2-krajee-base": "dev-master",
+        "yiisoft/yii2-jui": "^2.0@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

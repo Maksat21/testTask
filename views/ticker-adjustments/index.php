@@ -3,6 +3,7 @@
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TickerAdjustmentsSearch */
@@ -41,7 +42,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'bap',
             'bbp',
             'spread',
-            'created_at',
+            [
+                'attribute' => 'created_at',
+                'value' => 'created_at',
+                'filter' => DatePicker::widget([
+                    'model'=>$searchModel,
+                    'attribute'=>'created_at',
+                    'language' => 'ru',
+                    'dateFormat' => 'php:Y-m-d H:i:s',
+                ]),
+                'format' => 'html',
+            ],
             //'updated_at',
         ],
     ]); ?>

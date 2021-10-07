@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -15,7 +16,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'ticker_id') ?>
+    <?= $form->field($model, 'ticker_id')->dropDownList(ArrayHelper::map(\app\models\Tickers::find()->where(['status'=> 1])->asArray()->all(), 'id', 'name')) ?>
 
     <?php  echo $form->field($model, 'created_at') ?>
 

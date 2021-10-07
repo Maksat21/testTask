@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Ticker Adjustments', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
+<!--    --><?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -33,8 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'ticker_id',
                 'label' => Yii::t('app', 'ticker_id'),
                 'options' => ['width' => 125],
-                'value' => function(\app\models\Tickers $model){
-                    return $model->name;
+                'value' => function(\app\models\TickerAdjustments $model){
+                    return \app\models\Tickers::findOne($model->ticker_id)->name;
                 },
                 'filter' => ArrayHelper::map(\app\models\Tickers::find()->all(), 'id', 'name'),
             ],
